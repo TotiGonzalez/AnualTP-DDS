@@ -1,0 +1,53 @@
+{{#partial "contenido"}}
+    <div class="container-fluid login d-flex justify-content-center align-items-start vh-75">
+        <div class="container d-flex my-5 p-5 flex-column align-items-top">
+            <h2 class="login pb-5">Gestionar Rol de Administrador</h2>
+            <div class="table-responsive">
+                <form method="POST" action="/admin/index">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">id</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Tipo de Documento</th>
+                            <th scope="col">Numero de Documento</th>
+                            <th scope="col">Es Admin</th>
+                            <th scope="col">Seleccionar</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {{#each colaboradores}}
+                            <tr>
+                                <th scope="row">{{this.id}}</th>
+                                <td>{{this.nombre}}</td>
+                                <td>{{this.apellido}}</td>
+                                <td>{{this.tipoDocumento}}</td>
+                                <td>{{this.numeroDocumento}}</td>
+                                <td>
+                                    {{#if this.esAdmin}}
+                                        Sí
+                                    {{else}}
+                                        No
+                                    {{/if}}
+                                </td>
+                                <td>
+                                    <input type="checkbox" id="colaborador_{{this.id}}" name="colaborador" value="{{this.id}}">
+                                </td>
+                            </tr>
+                        {{/each}}
+                        </tbody>
+                    </table>
+                    <div class="d-flex justify-content-between p-2">
+                        <a href="{{anterior}}" class="btn btn-dark w-25 mt-4 text-center">Anterior</a>
+                        <a href="{{siguiente}}" class="btn btn-dark w-25 mt-4 text-center">Siguiente Página</a>
+                    </div>
+                    <button type="submit" name="action" value="asignar" class="btn btn-primary w-50 mx-auto d-block mt-4">Asignar Rol</button>
+                    <button type="submit" name="action" value="remover" class="btn btn-danger w-50 mx-auto d-block mt-4">Remover Rol</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{{/partial}}
+
+{{> templates/layout}}

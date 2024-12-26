@@ -1,0 +1,72 @@
+{{#partial "contenido"}}
+    <div class="home container-fluid">
+        <div class="d-flex container-fluid flex-column flex-md-row justify-content-evenly p-0 m-0">
+            <div class="d-flex flex-column flex-sm-row justify-content-center w3-animate-left w3-animate-opacity non-square-distrib" style="animation-duration: 2s;">
+                <img class="img-torcida" src="/public/img/donacion-distrib-viandas.jpg" alt="donacion vianda">
+            </div>
+
+        <div class="container-fluid flex-md-column flex-sm-row p-5 col-md-6 w3-animate-bottom w3-animate-opacity " style="animation-duration: 2s;">
+        <form action="/donacion/index/donaciondistribucion" method="POST">
+
+            <div class="borde-blanco">
+            <!-- nombre heladera -->
+            <div class="group-2">
+                <div class="group-wrapper">
+                    <div class="div-wrapper">
+                        <div class="group-3">
+                            <label for="nombre-heladera-origen" class="texto-label">Nombre Heladera Origen</label>
+                            <input type="text" id="nombre-heladera-origen" name="nombre-heladera-origen" class="label-formulario" placeholder="Ingrese heladera origen" required />
+                        </div>
+                    </div>
+                </div>
+
+            <!-- nombre heladera -->
+            <div class="group-2">
+                <div class="group-wrapper">
+                    <div class="div-wrapper">
+                        <div class="group-3">
+                            <label for="nombre-heladera-destino" class="texto-label">Nombre Heladera Destino</label>
+                            <input type="text" id="nombre-heladera-destino" name="nombre-heladera-destino" class="label-formulario" placeholder="Ingrese heladera destino" required />
+                        </div>
+                    </div>
+                </div>
+
+        <!-- cantidad -->
+        <div class="group-7">
+            <div class="group-8">
+                <div class="div-wrapper">
+                    <div class="group-3">
+                        <label for="cantidad-viandas" class="texto-label">Cantidad Viandas</label>
+                        <input type="text" id="cantidad-viandas" name="cantidad-viandas" class="label-formulario" placeholder="Ingrese cantidad" required />
+                    </div>
+                </div>
+            </div>
+
+            <!-- motivo -->
+            <div class="group-4">
+                <div class="group-5">
+                    <div class="group-6">
+                        <label for="motivo" class="texto-label">Motivo Distribucion</label>
+                        <input type="text" id="motivo" name="motivo" class="label-formulario" placeholder="Ingrese Motivo" required />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        </div>
+        <!-- boton donar -->
+        <div class="frame">
+            <button class="donar-bt" type="submit" onclick="mostrarMensaje()">DONAR</button>
+            <span id="mensajeAgradecimiento" style="margin-left: 10px; color: #4CAF50;"></span>
+        </div>
+    </div>
+    </form>
+
+            </div>
+        </div>
+    </div>
+
+{{/partial}}
+
+{{> templates/layout}}

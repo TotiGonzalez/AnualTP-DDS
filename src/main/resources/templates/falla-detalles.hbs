@@ -1,0 +1,110 @@
+{{#partial "contenido"}}
+    <div class="container-report">
+        <a href="/fallas" class="return-link">← Volver</a>
+        <h1 class="form_title">Detalles de la Falla</h1>
+
+        <div class="form_content">
+            <!-- Left Section with Read-Only Fields -->
+            <div class="form_fields">
+                <label class="form_label">Título</label>
+                <input type="text" class="read-only-field" value="{{titulo}}" readonly>
+
+                <label class="form_label">Fecha y Hora</label>
+                <input type="text" class="read-only-field" value="{{fechaYhora}}" readonly>
+
+                <label class="form_label">Nombre de la Heladera</label>
+                <input type="text" class="read-only-field" value="{{nombreHeladera}}" readonly>
+
+                <label class="form_label">Ubicación</label>
+                <input type="text" class="read-only-field" value="{{ubicacion}}" readonly>
+
+                <label class="form_label">Dirección</label>
+                <input type="text" class="read-only-field" value="{{direccion}}" readonly>
+
+                <label class="form_label">Nombre del Colaborador</label>
+                <input type="text" class="read-only-field" value="{{colaborador}}" readonly>
+
+                <label class="form_label">Descripción de falla</label>
+                <textarea class="read-only-field" readonly>{{descripcion}}</textarea>
+
+                <!-- Severity Section (Read-Only Checkboxes) -->
+                <div class="severity-options">
+                    <span class="form_label">Tipo de Falla:</span>
+                    <label><input type="checkbox" disabled {{#if isGrave}}checked{{/if}}> Grave</label>
+                    <label><input type="checkbox" disabled {{#if isLeve}}checked{{/if}}> Leve</label>
+                </div>
+            </div>
+
+            <div class="image_section">
+                <img src="{{pathFotos}}" alt="Imagen para el reporte" class="uploaded-image">
+                {{#if solucionada}}
+                    <button class="toggle_state_button" data-id="{{id}}" data-action="reopen">Reabrir Falla</button>
+                {{else}}
+                    <button class="toggle_state_button" data-id="{{id}}" data-action="resolve">Marcar como Solucionado</button>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+
+    <div id="successModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <p id="modalMessage">Falla técnica actualizada exitosamente.</p>
+            <button id="confirmButton">OK</button>
+        </div>
+    </div>
+
+    <script>
+        // Get references to the modal and its elements
+        const successModal = document.getElementById('successModal');
+        const modalMessage = document.getElementById('modalMessage');
+        const confirmButton = document.getElementById('confirmButton');
+
+        // Close the modal when the confirm button is clicked
+        confirmButton.addEventListener('click', () => {
+            successModal.style.display = 'none';
+            window.location.reload(); // Reload the page to reflect the updated state
+        });
+
+        // Add event listeners to the toggle state buttons
+        document.querySelectorAll('.toggle_state_button').forEach(button => {
+            button.addEventListener('click', function () {
+                const fallaId = this.dataset.id;
+                const action = this.dataset.action; // "resolve" or "reopen"
+                const url = `/fallas/${fallaId}/${action}`;
+
+                fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                })
+                        .then(response => {
+                            if (response.ok) {
+                                return response.json();
+                            } else {
+                                throw new Error('Failed to update the state.');
+                            }
+                        })
+                        .then(data => {
+                            // Set the modal message based on the action
+                            if (action === 'resolve') {
+                                modalMessage.textContent = 'Falla marcada como solucionada correctamente.';
+                            } else if (action === 'reopen') {
+                                modalMessage.textContent = 'Falla reabierta correctamente.';
+                            }
+
+                            // Show the modal
+                            successModal.style.display = 'block';
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            alert('Hubo un problema al actualizar la falla. Inténtalo de nuevo.');
+                        });
+            });
+        });
+    </script>
+
+
+{{/partial}}
+
+{{> templates/layout}}

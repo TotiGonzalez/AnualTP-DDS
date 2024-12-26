@@ -1,0 +1,95 @@
+{{#partial "contenido"}}
+    <div class="home container-fluid">
+        <div class="d-flex container-fluid flex-column flex-md-row justify-content-evenly p-0 m-0">
+            <div class="d-flex flex-column flex-sm-row justify-content-center w3-animate-left w3-animate-opacity non-square-distrib" style="animation-duration: 2s;">
+                <img class="img-torcida" src="/public/img/donacion-vianda-alarg.jpg" alt="donacion vianda">
+            </div>
+
+        <div class="container-fluid flex-md-column flex-sm-row p-5 col-md-6 w3-animate-bottom w3-animate-opacity " style="animation-duration: 2s;">
+        <form action="/donacion/index/donacionvianda" method="POST">
+
+            <div class="borde-blanco">
+            <!-- nombre comida -->
+            <div class="group-2">
+                <div class="group-wrapper">
+                    <div class="div-wrapper">
+                        <div class="group-3">
+                            <label for="nombre-comida" class="texto-label">Nombre Comida</label>
+                            <input type="text" id="nombre-comida" name="nombre-comida" class="label-formulario" placeholder="Ingrese Nombre" required />
+                        </div>
+                    </div>
+                </div>
+
+            <!-- nombre heladera -->
+            <div class="group-2">
+                <div class="group-wrapper">
+                    <div class="div-wrapper">
+                        <div class="group-3">
+                            <label for="nombre-heladera" class="texto-label">Nombre Heladera Destino</label>
+                            <input type="text" id="nombre-heladera" name="nombre-heladera" class="label-formulario" placeholder="Ingrese Nombre" required />
+                        </div>
+                    </div>
+                </div>
+
+        <!-- calorias -->
+        <div class="group-7">
+            <div class="group-8">
+                <div class="div-wrapper">
+                    <div class="group-3">
+                        <label for="calorias" class="texto-label">Calorias</label>
+                        <input type="text" id="calorias" name="calorias" class="label-formulario" placeholder="Ingrese calorias de la vianda" required />
+                    </div>
+                </div>
+            </div>
+
+            <!-- peso -->
+            <div class="group-4">
+                <div class="group-5">
+                    <div class="group-6">
+                        <label for="peso" class="texto-label">Peso</label>
+                        <input type="text" id="peso" name="peso" class="label-formulario" placeholder="Ingrese peso de la vianda" required />
+                    </div>
+                </div>
+            </div>
+
+            <!-- fecha cadu -->
+            <div class="group-wrapper">
+                <div class="div-wrapper">
+                    <div class="group-3">
+                        <label for="fecha-cadu" class="texto-label">Fecha caducidad de la vianda</label>
+                        <input type="date" id="fecha-cadu" name="fecha-cadu" class="label-formulario" required />
+                    </div>
+                </div>
+            </div>
+
+            <div class="group-wrapper">
+                <div class="div-wrapper">
+                    <div class="group-3">
+                        <input type="checkbox" id="vegano" name="es-vegetariana" class="checkbox-formulario" />
+                        <label for="vegano" class="texto-label">Es vegetariana</label>
+
+                        <!-- Checkbox para vegana -->
+                        <input type="checkbox" id="veg" name="es-vegana" class="checkbox-formulario" />
+                        <label for="veg" class="texto-label">Es vegana</label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        </div>
+        <!-- boton donar -->
+        <div class="frame">
+            <button class="donar-bt" type="submit" onclick="mostrarMensaje()">DONAR</button>
+            <span id="mensajeAgradecimiento" style="margin-left: 10px; color: #4CAF50;"></span>
+        </div>
+    </div>
+    </form>
+
+            </div>
+        </div>
+    </div>
+
+{{/partial}}
+
+{{> templates/layout}}

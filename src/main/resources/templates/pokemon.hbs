@@ -1,0 +1,41 @@
+{{#partial "contenido"}}
+       <div class="col p-2">
+           <div class="card border-light mb-3">
+             <div class="row g-0">
+               <div class="col-md-4">
+                    <img src="{{ captura.pokemon.principalImage }}" class="img-fluid rounded-start" alt="{{ captura.apodo }}">
+               </div>
+               <div class="col-md-8">
+                 <div class="card-body">
+                   <h5 class="card-title">
+                       <a href="/capturas/{{ captura.id }}"> {{ captura.pokemon.nombre }}</a>
+                       {{#if captura.nuevo}} <span class="badge rounded-pill bg-info">Nuevo</span> {{/if}}
+                   </h5>
+                   <p class="card-text">
+                       <div>
+                       Tiene un nivel de {{ captura.nivel }} y
+                       {{#if captura.pokemon.evolucion }} tiene evolución
+                       {{ else }} no tiene evolución.
+                       {{/if}}
+                        </div>
+                        <div>
+                            <i> Apodo actual: </i>
+                            <form hx-put="/capturas/{{ captura.id }}" hx-target="#msg-save-apodo">
+                                <input type="text" name="apodo" required value="{{ captura.apodo }}">
+                                <button>Guardar</button>
+                            </form>
+                            <span id="msg-save-apodo"/>
+                        </div>
+                   </p>
+                 </div>
+               </div>
+               <div class="card-footer text-body-secondary text-end">
+                    Capturado el {{ captura.fechaCaptura }}
+               </div>
+             </div>
+           </div>
+          </div>
+       </div>
+{{/partial}}
+
+{{>templates/layout}}

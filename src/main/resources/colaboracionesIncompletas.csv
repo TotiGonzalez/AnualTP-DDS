@@ -1,0 +1,5 @@
+TipoDoc;Documento;Nombre;Apellido;Mail;Fecha de Colaboración;Fecha de Nacimiento;Forma de colaboración;Cantidad
+DNI;789101112;Juan;Gómez;jgomez@test.com;01/01/2023;01/01/2000;DERO;2
+LC;123456789;Lionel;;lmessi@test.com;01/01/2023;01/01/2000;REDISTRIBUCION_VIANDAS;1
+LE;00000000001;Maria;Johnson;mjohnson@test.com;06/01/2023;01/01/2000;REDISTRIBUCION_VIANDAS;1
+LE;123436789;;Perez;pperez@test.com;05/01/2023;01/01/2000;DONACION_VIANDAS;

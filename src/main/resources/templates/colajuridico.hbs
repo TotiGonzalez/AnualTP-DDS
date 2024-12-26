@@ -1,0 +1,61 @@
+{{#partial "contenido"}}
+    <div class="container-report">
+        <p class="form_title">Registrar colaborador jurídico</p>
+
+        <div class="form_content">
+            <!-- Razón Social y Rubro -->
+            <div class="form_fields">
+                <div class="form_field">
+                    <label class="form_label">Razón social</label>
+                    <input type="text" name="razonSocial" placeholder="Value">
+                </div>
+                <div class="form_field">
+                    <label class="form_label">Rubro</label>
+                    <input type="text" name="rubro" placeholder="Value">
+                </div>
+            </div>
+
+            <!-- Valor medio de contacto -->
+            <div class="form_fields">
+                <div class="form_field">
+                    <label class="form_label">Valor medio de contacto</label>
+                    <input type="text" name="valorMedioContacto" placeholder="Value">
+                </div>
+            </div>
+
+            <!-- Tipo de organización y Tipo de medio de contacto -->
+            <div class="form_fields">
+                <div class="form_field">
+                    <label class="form_label">Tipo de organización</label>
+                    <select name="tipoOrganizacion">
+                        <option value="option1">Option1</option>
+                        <option value="option2">Option2</option>
+                        <option value="option3">Option3</option>
+                    </select>
+                </div>
+                <div class="form_field">
+                    <label class="form_label">Tipo de medio de contacto</label>
+                    <select name="tipoMedioContacto">
+                        <option value="option1">Option1</option>
+                        <option value="option2">Option2</option>
+                        <option value="option3">Option3</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Image and button section -->
+            <div class="image_section">
+                <img src="../public/img/imagen-camara.png" alt="Camera Icon" class="camera_icon">
+                <button type="button" class="photo_button">
+                    <img src="../public/img/camera.png" alt="Camera Icon"> Tomar foto
+                </button>
+                <button type="button" class="attach_button">
+                    <img src="../public/img/attach.png" alt="Attach Icon"> Adjuntar
+                </button>
+            </div>
+        </div>
+
+        <button type="submit" class="submit_button">Registrar</button>
+    </div>
+{{/partial}}
+{{> templates/layout}}

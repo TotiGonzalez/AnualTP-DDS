@@ -1,0 +1,332 @@
+{{#partial "contenido"}}
+<head>
+           <link rel="stylesheet" href="/public/css/main.css">
+           <link rel="stylesheet" href="/public/css/fonts.css">
+               <script>
+
+            function accionDiv() {
+            //alert("¡Haz clic en la heladera!");
+
+              var mitextelement = document.getElementById("text_input_hel1");
+              mitextelement.value = "Open 25 Horas";
+
+              var te_localidad = document.getElementById("ti_hel1_local");
+              te_localidad.value = "Villa Crespo";
+
+              var te_capacidad = document.getElementById("ti_hel1_capa");
+              te_capacidad.value = "20 viandas";
+
+              var te_status = document.getElementById("ti_hel1_status");
+              te_status.value = "Sin fallas";
+
+              var te_imagen = document.getElementById("imagen_maps_gh");
+              te_imagen.src = "/public/img/gh_maps01.png"
+              //mitextelement.textContent("Avenida Corrientes 5617");
+
+            }
+            function accionDiv2() {
+              var mitextelement = document.getElementById("text_input_hel1");
+              mitextelement.value = "Supermercado COTO";
+
+              var te_localidad = document.getElementById("ti_hel1_local");
+              te_localidad.value = "Nuñez";
+
+              var te_capacidad = document.getElementById("ti_hel1_capa");
+              te_capacidad.value = "30 viandas";
+
+              var te_status = document.getElementById("ti_hel1_status");
+              te_status.value = "Falla leve";
+
+              var te_imagen = document.getElementById("imagen_maps_gh");
+              te_imagen.src = "/public/img/gh_maps02.png"
+            }
+            function accionDiv3() {
+
+            var mitextelement = document.getElementById("text_input_hel1");
+              mitextelement.value = "Supermercado DIA";
+
+              var te_localidad = document.getElementById("ti_hel1_local");
+              te_localidad.value = "Microcentro";
+
+              var te_capacidad = document.getElementById("ti_hel1_capa");
+              te_capacidad.value = "15 viandas";
+
+              var te_status = document.getElementById("ti_hel1_status");
+              te_status.value = "Temperatura baja";
+
+              var te_imagen = document.getElementById("imagen_maps_gh");
+              te_imagen.src = "/public/img/gh_maps03.png"
+            }
+            function Confirmar_baja(){
+              var resultado = confirm("Dar de baja la heladera?");
+            }
+            function Confirmar_alta(){
+              var resultado = confirm("Dar de alta la heladera?");
+            }
+           </script>
+</head>
+
+   <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-theme-neutral-dark);
+        background: var(--dl-color-theme-neutral-light);
+
+        fill: var(--dl-color-theme-neutral-dark);
+      }
+     
+  
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/animate.css@4.1.1/animate.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    />
+  </head>
+
+      <div class="body-container">
+        <div class="body-body1">
+          <div class="body-body2">
+            <div class="body-map"></div>
+            <div class="body-input-field1">
+              <input
+                type="text"
+                placeholder="Nombre de negocio"
+                class="body-input1"
+                id="text_input_hel1"
+              />
+            </div>
+            <div class="body-input-field2">
+              <input type="text" placeholder="Localidad" class="body-input2"
+              id="ti_hel1_local"
+              />
+            </div>
+            <div class="body-input-field3">
+              <input
+                type="text"
+                placeholder="Capacidad actual"
+                class="body-input3"
+                id = "ti_hel1_capa"
+              />
+            </div>
+            <div class="body-input-field4">
+              <input type="text" placeholder="Status" class="body-input4"
+              id = "ti_hel1_status" />
+            </div>
+            <button class="body-button-tomar-foto1" onclick="Confirmar_alta()">
+              <img
+                src="/public/img/clocki286-onc8.svg"
+                alt="ClockI286"
+                class="body-clock"
+              />
+              <span class="body-text10 SingleLineBodyBase">
+                Habilitar heladera
+              </span>
+            </button>
+            <button class="body-button-tomar-foto2" onclick="Confirmar_baja()">
+              <img
+                src="public/img/xi286-ko99h.svg"
+                alt="XI286"
+                class="body-x"
+              />
+              <span class="body-text11 SingleLineBodyBase">Dar de baja</span>
+            </button>
+            <button class="body-button-tomar-foto3">
+              <img
+                src="public/img/clipboardi286-oeg.svg"
+                alt="ClipboardI286"
+                class="body-clipboard"
+              />
+              <span class="body-text12 SingleLineBodyBase">
+                Visualizar historial
+              </span>
+            </button>
+            <div class="body-menu1">
+              <div class="body-menu-header1">
+                <span class="body-text13 BodySmall">Gestion de Heladeras</span>
+                <span class="body-text14 BodyStrong">Alertas recientes</span>
+              </div>
+              <div class="body-menu-separator1">
+                <img
+                  src="public/img/rulei286-adkr-200h.png"
+                  alt="RuleI286"
+                  class="body-rule1"
+                />
+              </div>
+              <div class="body-menu-section1">
+                <div class="body-menu-item1" onclick="accionDiv2()">
+                  <img
+                    src="public/img/alertoctagoni286-nn29.svg"
+                    alt="AlertoctagonI286"
+                    class="body-alertoctagon1"
+                  />
+                  <div class="body-body3">
+                    <div class="body-row1">
+                      <span class="body-text15 BodyBase">
+                        Alerta 1 - Heladera 2
+                      </span>
+                    </div>
+                    <span class="body-text16 BodySmall">
+                      Falla leve - Falla en la conexión
+                    </span>
+                  </div>
+                </div>
+                <div class="body-menu-item2" onclick="accionDiv3()">
+                  <img
+                    src="public/img/alertoctagoni286-hm85.svg"
+                    alt="AlertoctagonI286"
+                    class="body-alertoctagon2"
+                  />
+                  <div class="body-body4">
+                    <div class="body-row2">
+                      <span class="body-text17 BodyBase">
+                        Alerta 2 - Heladera 3
+                      </span>
+                    </div>
+                    <span class="body-text18 BodySmall">
+                      Falla leve - Temperatura baja
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="body-menu-separator2">
+                <img
+                  src="public/img/rulei286-7o19-200h.png"
+                  alt="RuleI286"
+                  class="body-rule2"
+                />
+              </div>
+            </div>
+            <div class="body-menu2">
+              <div class="body-menu-header2">
+                <span class="body-text19 BodySmall">Gestion de Heladeras</span>
+                <span class="body-text20 BodyStrong">Heladeras</span>
+              </div>
+              <div class="body-menu-separator3">
+                <img
+                  src="public/img/rulei284-5fe-200h.png"
+                  alt="RuleI284"
+                  class="body-rule3"
+                />
+              </div>
+              <div class="body-menu-section2">
+                  <div class="body-menu-item3" onclick="accionDiv()">
+                    <img
+                      src="public/img/alignlefti284-q14k.svg"
+                      alt="AlignleftI284"
+                      class="body-alignleft1"
+                    />
+                    <div class="body-body5">
+                      <div class="body-row3">
+                        <span class="body-text21 BodyBase">Heladera 1</span>
+                        <div class="body-menu-shortcut1"></div>
+                      </div>
+                      <span class="body-text22 BodySmall">
+                        Capacidad: 3/20 - Sin fallas
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="body-menu-item4" onclick="accionDiv2()">
+                  <img
+                    src="/public/img/alignlefti284-q5n.svg"
+                    alt="AlignleftI284"
+                    class="body-alignleft2"
+                  />
+                  <div class="body-body6">
+                    <div class="body-row4">
+                      <span class="body-text23 BodyBase">Heladera 2</span>
+                    </div>
+                    <span class="body-text24 BodySmall">
+                      Capacidad: 17/30 - Falla leve
+                    </span>
+                  </div>
+                </div>
+                <div class="body-menu-item5" onclick="accionDiv3()">
+                  <img
+                    src="/public/img/alignlefti284-udm.svg"
+                    alt="AlignleftI284"
+                    class="body-alignleft3"
+                  />
+                  <div class="body-body7">
+                    <div class="body-row5">
+                      <span class="body-text25 BodyBase">Heladera 3</span>
+                      <div class="body-menu-shortcut2"></div>
+                    </div>
+                    <span class="body-text26 BodySmall">
+                      Capacidad: 0/15 - Temperatura baja
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="body-etiquetaplantilla-v2"></div>
+            <img
+              src="/public/img/image43732-d8o-400h.png"
+              alt="image43732"
+              class="body-image4"
+              id = "imagen_maps_gh"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+{{/partial}}
+
+{{>templates/layout}}

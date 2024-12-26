@@ -1,0 +1,144 @@
+{{#partial "contenido"}}
+<div class="container-report">
+
+    <a href="/fallas" class="return-link">← Volver</a>
+    <h2 class="form_title">Reportar Falla Técnica</h2>
+
+    <form class="form_content" action="/altaFalla" method="POST" enctype="multipart/form-data">
+        <div class="form_fields">
+            <div class="form_field">
+                <label class="form_label" for="titulo">Título</label>
+                <input type="text" name="titulo" id="titulo" placeholder="Escriba el título de la falla" maxlength="50" required autocomplete="off">
+            </div>
+
+            <div class="form_field">
+                <label class="form_label" for="heladeraInvolucrada">Heladera Involucrada</label>
+                <input type="text" id="searchHeladera" placeholder="Buscar Heladera..." class="form_input" autocomplete="off"/>
+                <select name="heladeraInvolucrada" id="heladeraInvolucrada" class="form_select" required >
+                    <option disabled selected>Seleccione una heladera...</option>
+                    <!-- Dynamic options will be added here -->
+                </select>
+                <!-- Message container -->
+                <span id="noMatchMessage" class="no-match-message" style="display: none;">Nombre no existente</span>
+            </div>
+
+            <!--<div class="form_field">
+                <label class="form_label" for="colaboradorFisico">Colaborador Físico</label>
+                <select name="colaboradorFisico" id="colaboradorFisico" class="form_select" required>
+                    {{#each colaboradores}}
+                        <option value="{{this.id}}">{{this.nombre}}</option>
+                    {{/each}}
+                </select>
+            </div>-->
+
+            <div class="form_field">
+                <label class="form_label" for="email">Email</label>
+                <input type="email" name="email" id="email" class="form_input" placeholder="Correo electrónico" required>
+            </div>
+
+            <div class="form_field">
+                <label class="form_label" for="descripcion">Descripción de la Falla</label>
+                <textarea name="descripcion" id="descripcion" class="form_textarea" placeholder="Describa la falla" rows="4" required></textarea>
+            </div>
+
+            <div class="form_field severity-options">
+                <span>Tipo de Falla:</span>
+                <label><input type="radio" name="grave" value="true"> Grave</label>
+                <label><input type="radio" name="grave" value="false"> Leve</label>
+            </div>
+
+            <div class="upload_image_section">
+                <label class="form_label">Añadir Fotografía:
+                    <input type="file" name="pathFotos" accept="image/*">
+                </label>
+            </div>
+
+        </div>
+
+        <button type="submit" class="submit_button">Reportar</button>
+    </form>
+    <script>
+        document.getElementById("searchHeladera").addEventListener("input", function () {
+            const searchValue = this.value;
+
+            // Send an AJAX request to fetch filtered heladeras
+            fetch(`/heladeras/search?search=${encodeURIComponent(searchValue)}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const dropdown = document.getElementById("heladeraInvolucrada");
+                        const message = document.getElementById("noMatchMessage");
+                        dropdown.innerHTML = ""; // Clear the current options
+
+                        if (data.length === 0) {
+                            // Show the no-match message
+                            message.style.display = "block";
+                            message.textContent = "Nombre no existente";
+                        } else {
+                            // Hide the no-match message
+                            message.style.display = "none";
+
+                            // Populate the dropdown with the filtered heladeras
+                            data.forEach(heladera => {
+                                const option = document.createElement("option");
+                                option.value = heladera.id;
+                                option.textContent = heladera.nombreHeladera;
+                                dropdown.appendChild(option);
+                            });
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error fetching heladeras:", error);
+                    });
+        });
+    </script>
+
+    <div id="successModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <p id="modalMessage">Falla técnica reportada exitosamente.</p>
+            <button id="confirmButton">OK</button>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector(".form_content").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const form = event.target;
+            const formData = new FormData(form);
+
+            // Send the form data via fetch
+            fetch(form.action, {
+                method: "POST",
+                body: formData,
+            })
+                    .then(response => {
+                        if (response.ok) {
+                            return response.json();
+                        } else {
+                            throw new Error("Error submitting the form.");
+                        }
+                    })
+                    .then(data => {
+                        // Show the success modal
+                        const modal = document.getElementById("successModal");
+                        const message = document.getElementById("modalMessage");
+                        message.textContent = data.message || "Falla técnica reportada exitosamente.";
+                        modal.style.display = "flex";
+
+                        // Handle modal confirmation button click
+                        const confirmButton = document.getElementById("confirmButton");
+                        confirmButton.addEventListener("click", function () {
+                            modal.style.display = "none";
+                            window.location.href = "/fallas";
+                        });
+                    })
+                    .catch(error => {
+                        console.error("Error:", error);
+                        alert("Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.");
+                    });
+        });
+    </script>
+</div>
+{{/partial}}
+
+{{> templates/layout}}

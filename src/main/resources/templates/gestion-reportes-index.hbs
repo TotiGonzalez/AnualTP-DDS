@@ -1,0 +1,137 @@
+{{#partial "contenido"}}
+    <div class="reportes container-fluid">
+
+        <h1>Reportes de Fallas</h1>
+
+        <!-- Filtrado y busqueda -->
+
+
+        <div class="filter-search-container">
+            <li class="filter-dropdown">
+                <button class="filter-button" data-bs-toggle="dropdown" role="button">▼</button>
+                <ul class="dropdown-menu" id="sortDropdown">
+                    <li><a class="dropdown-item" data-sort="fechaYhora" data-order="desc">Más recientes primero</a></li>
+                    <li><a class="dropdown-item" data-sort="fechaYhora" data-order="asc">Más antiguos primero</a></li>
+                    <li><a class="dropdown-item" data-sort="solucionada" data-order="desc">Pendientes</a></li>
+                    <li><a class="dropdown-item" data-sort="solucionada" data-order="asc">Solucionados</a></li>
+                    <!--<li><a class="dropdown-item" data-sort="nombreHeladera" data-order="asc">Heladera A - Z</a></li>
+                    <li><a class="dropdown-item" data-sort="nombreHeladera" data-order="desc">Heladera Z - A</a></li>-->
+                </ul>
+            </li>
+            <select id="searchType" class="search-input">
+                <option value="nombreHeladera" selected>Buscar por Heladera</option>
+                <option value="titulo">Buscar por Título</option>
+            </select>
+            <input type="text" id="searchInput" placeholder="Buscar..." class="search-input">
+            <button class="search-button" id="searchButton">Buscar</button>
+            <a href="/fallas/new" class="search-button report-button">Reportar Nueva Falla</a>
+        </div>
+
+        <!-- Sección de la tabla -->
+        <div class="table-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>TÍTULO</th>
+                    <th>HELADERA</th>
+                    <th>UBICACION</th>
+                    <th>FECHA Y HORA</th>
+                    <th>ESTADO</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#if reportes.length}}
+                    <!-- Repeatable row structure for each reporte -->
+                    {{#each reportes}}
+                        <tr class="clickable-row" data-id="{{this.id}}">
+                            <td>{{this.titulo}}</td>
+                            <td>{{this.nombreHeladera}}</td>
+                            <td>{{this.ubicacion}}</td>
+                            <td>{{this.fechaYhora}}</td>
+                            <td>
+                                {{#if this.solucionada}}
+                                    <span class="status solved">Resuelto</span>
+                                {{else}}
+                                    <span class="status pending">Pendiente</span>
+                                {{/if}}
+                            </td>
+                        </tr>
+                    {{/each}}
+                {{else}}
+                    <tr>
+                        <td colspan="5">No hay reportes de fallas</td>
+                    </tr>
+                {{/if}}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Sección de paginacion -->
+        <div class="pagination">
+            <span class="report-count">FALLAS PENDIENTES: {{totalReportes}}</span>
+            <span class="page-info">{{paginationStart}}-{{paginationEnd}} de {{totalReportes}}</span>
+            <div class="pagination-controls">
+                <a class="pagination-button" href="?page={{previousPage}}&sortField={{sortField}}&sortOrder={{sortOrder}}" {{#if isFirstPage}}disabled{{/if}}>⬅</a>
+                <span class="current-page">{{currentPage}}/{{totalPages}}</span>
+                <a class="pagination-button" href="?page={{nextPage}}&sortField={{sortField}}&sortOrder={{sortOrder}}" {{#if isLastPage}}disabled{{/if}}>➡</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!--Script para redirigir al detalle de la falla-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            document.getElementById("searchInput").value = "";
+            document.getElementById("searchType").value = "nombreHeladera";
+
+            document.querySelectorAll(".clickable-row").forEach(row => {
+                row.addEventListener("click", function () {
+                    const reportId = this.getAttribute("data-id");
+                    if (reportId) {
+                        window.location.href = `/fallas/${reportId}`;
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!--Script para ordenar las fallas-->
+    <script>
+        document.querySelectorAll("#sortDropdown .dropdown-item").forEach(item => {
+            item.addEventListener("click", () => {
+                const sortField = item.getAttribute("data-sort");
+                const sortOrder = item.getAttribute("data-order");
+                const searchParams = new URLSearchParams(window.location.search);
+
+                // Update query parameters for sorting
+                searchParams.set("sortField", sortField);
+                searchParams.set("sortOrder", sortOrder);
+
+                // Reload the page with updated parameters
+                window.location.search = searchParams.toString();
+            });
+        });
+    </script>
+
+    <!--Script para realizar la busqueda-->
+    <script>
+        document.getElementById("searchButton").addEventListener("click", () => {
+            const searchType = document.getElementById("searchType").value;
+            const searchQuery = document.getElementById("searchInput").value;
+            const searchParams = new URLSearchParams(window.location.search);
+
+            // Update query parameters for searching
+            searchParams.set("searchType", searchType);
+            searchParams.set("search", searchQuery);
+
+            // Reload the page with updated parameters
+            window.location.search = searchParams.toString();
+        });
+    </script>
+
+
+{{/partial}}
+
+{{>templates/layout}}

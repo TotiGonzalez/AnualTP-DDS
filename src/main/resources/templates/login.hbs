@@ -1,0 +1,30 @@
+{{#partial "contenido"}}
+    <div class="home container-fluid login d-flex justify-content-center align-items-center vh-100">
+        <div class="d-flex my-5 p-5 flex-column align-items-top" style="background-color: #FFFFFF; width: 100%; max-width: 500px;">
+            <h2 class="login pb-5">Iniciar Sesión</h2>
+            {{#if error}}
+                <div class="text-center alert alert-danger alert-dismissible fade show" role="alert">
+                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                    {{error}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {{/if}}
+            <form class="w-100" method="POST" action="/login">
+                <div class="mb-3">
+                    <label for="nombre" class="login">Nombre de Usuario</label>
+                    <input class="form-control mb-3" name="nombre" id="nombre" placeholder="Ingresar Nombre de Usuario" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="login">Contraseña</label>
+                    <input class="form-control mb-3" name="password" type="password" id="password" placeholder="Ingresar Contraseña" required>
+                </div>
+                <button class="btn btn-primary w-50 mx-auto d-block mt-4">Ingresar</button>
+            </form>
+            <div class="w-100 text-center mt-3 p-2">
+                <a class="login" href="#">Crear Cuenta</a>
+            </div>
+        </div>
+    </div>
+{{/partial}}
+
+{{>templates/layout}}

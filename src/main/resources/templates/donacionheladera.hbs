@@ -1,0 +1,69 @@
+{{#partial "contenido"}}
+    <div class="home container-fluid">
+        <div class="d-flex container-fluid flex-column flex-md-row justify-content-evenly p-0 m-0">
+            <div class="d-flex flex-column flex-sm-row justify-content-center w3-animate-left w3-animate-opacity non-square" style="animation-duration: 2s;">
+                <img class="img-torcida" src="/public/img/donacion-heladera-alarg.jpg" alt="colocar heladera">
+            </div>
+
+        <div class="container-fluid flex-md-column flex-sm-row p-5 col-md-6 w3-animate-bottom w3-animate-opacity " style="animation-duration: 2s;">
+        <form action="/donacion/index/donacionheladera" method="POST">
+
+            <div class="borde-blanco">
+            <!-- nombre heladera -->
+            <div class="group-2">
+                <div class="group-wrapper">
+                    <div class="div-wrapper">
+                        <div class="group-3">
+                            <label for="nombre-heladera" class="texto-label">Nombre Heladera</label>
+                            <input type="text" id="nombre-heladera" name="nombre-heladera" class="label-formulario" placeholder="Ingrese Nombre" required />
+                        </div>
+                    </div>
+                </div>
+
+        <!-- direccion -->
+        <div class="group-4">
+            <div class="group-5">
+                <div class="group-6">
+                    <label for="direccion-heladera" class="texto-label">Dirección</label>
+                    <input type="text" id="direccion-heladera" name="direccion-heladera" class="label-formulario" placeholder="Ingrese Calle, Altura, Ciudad y Localidad" required />
+                </div>
+            </div>
+        </div>
+
+        <!-- capacidad -->
+        <div class="group-7">
+            <div class="group-8">
+                <div class="div-wrapper">
+                    <div class="group-3">
+                        <label for="capacidad-heladera" class="texto-label">Capacidad Heladera</label>
+                        <input type="text" id="capacidad-heladera" name="capacidad-heladera" class="label-formulario" placeholder="Ingrese Capacidad en Kg" required />
+                    </div>
+                </div>
+            </div>
+
+            <!-- colocacion -->
+            <div class="group-wrapper">
+                <div class="div-wrapper">
+                    <div class="group-3">
+                        <label for="fecha-colocacion" class="texto-label">Fecha Colocación</label>
+                        <input type="date" id="fecha-colocacion" name="fecha-colocacion" class="label-formulario" required />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+        <!-- boton donar -->
+        <div class="frame">
+            <button class="donar-bt" type="submit">DONAR</button>
+        </div>
+    </div>
+    </form>
+
+            </div>
+        </div>
+    </div>
+
+{{/partial}}
+
+{{> templates/layout}}

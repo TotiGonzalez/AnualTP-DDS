@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+             http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+
+    <persistence-unit name="simple-persistence-unit" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>ar.edu.utn.frba.dds.model.colaboradores.Credencial</class>
+        <class>ar.edu.utn.frba.dds.model.colaboradores.Colaborador</class>
+        <class>ar.edu.utn.frba.dds.model.colaboradores.ColaboradorFisico</class>
+        <class>ar.edu.utn.frba.dds.model.colaboradores.ColaboradorJuridico</class>
+        <class>ar.edu.utn.frba.dds.model.colaboradores.datoscolaborador.Direccion</class>
+        <class>ar.edu.utn.frba.dds.model.colaboradores.medioscontacto.MedioContacto</class>
+        <class>ar.edu.utn.frba.dds.db.convertidores.ConvertidorLocalDate</class>
+        <class>ar.edu.utn.frba.dds.db.convertidores.ConvertidorLocalDateTime</class>
+        <class>ar.edu.utn.frba.dds.model.reportes.MovimientoVianda</class>
+        <class>ar.edu.utn.frba.dds.model.suscripciones.SuscripcionHeladera</class>
+        <class>ar.edu.utn.frba.dds.model.reportes.TipoMovimiento</class>
+        <class>ar.edu.utn.frba.dds.model.heladeras.UbicacionPrecisa</class>
+        <class>ar.edu.utn.frba.dds.model.heladeras.Vianda</class>
+        <class>ar.edu.utn.frba.dds.model.heladeras.Comida</class>
+        <class>ar.edu.utn.frba.dds.model.heladeras.FallaTecnica</class>
+        <class>ar.edu.utn.frba.dds.model.heladeras.Heladera</class>
+        <class>ar.edu.utn.frba.dds.model.heladeras.SolicitudApertura</class>
+        <class>ar.edu.utn.frba.dds.model.heladeras.AlertaHeladera</class>
+        <class>ar.edu.utn.frba.dds.model.heladeras.Apertura</class>
+        <class>ar.edu.utn.frba.dds.model.tecnico.VisitaTecnico</class>
+        <class>ar.edu.utn.frba.dds.model.colaboraciones.Colaboracion</class>
+        <class>ar.edu.utn.frba.dds.model.colaboradores.Colaborador</class>
+        <class>ar.edu.utn.frba.dds.model.colaboraciones.DistribucionVianda</class>
+        <class>ar.edu.utn.frba.dds.model.colaboraciones.DonacionDinero</class>
+        <class>ar.edu.utn.frba.dds.model.colaboraciones.DonacionVianda</class>
+        <class>ar.edu.utn.frba.dds.model.colaboraciones.HacerseCargoHeladera</class>
+        <class>ar.edu.utn.frba.dds.model.colaboradores.PersonaVulnerable</class>
+        <class>ar.edu.utn.frba.dds.model.colaboraciones.RegistracionPersonaVulnerable</class>
+        <class>ar.edu.utn.frba.dds.model.tarjetas.RegistroUso</class>
+        <class>ar.edu.utn.frba.dds.model.suscripciones.SugerenciaHeladera</class>
+        <class>ar.edu.utn.frba.dds.model.tarjetas.Tarjeta</class>
+        <class>ar.edu.utn.frba.dds.model.tarjetas.TarjetaColaborador</class>
+        <class>ar.edu.utn.frba.dds.model.tarjetas.TarjetaPersonaVulnerable</class>
+        <class>ar.edu.utn.frba.dds.model.heladeras.Vianda</class>
+        <class>ar.edu.utn.frba.dds.model.reportes.ReporteViandasPorColaborador</class>
+        <class>ar.edu.utn.frba.dds.model.reportes.ReporteViandasPorHeladera</class>
+        <class>ar.edu.utn.frba.dds.model.reportes.ReporteFallas</class>
+        <class>ar.edu.utn.frba.dds.model.reportes.GeneracionReportes</class>
+        <class>ar.edu.utn.frba.dds.model.reportes.TipoMovimiento</class>
+        <class>ar.edu.utn.frba.dds.model.reportes.MovimientoVianda</class>
+        <class>ar.edu.utn.frba.dds.model.reportes.ViandasDonadasPorColaborador</class>
+        <class>ar.edu.utn.frba.dds.model.tecnico.Tecnico</class>
+        <class>ar.edu.utn.frba.dds.model.colaboradores.datoscolaborador.Documento</class>
+        <class>ar.edu.utn.frba.dds.model.tarjetas.solicitudes.SolicitudTarjeta</class>
+
+        <properties>
+            <!--<property name="hibernate.archive.autodetection" value="class"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/monitoreoheladerasdds"/>
+            <property name="hibernate.connection.username" value="root"/>
+            <property name="hibernate.connection.password" value="Ninguno123!"/>-->
+
+            <!--<property name="hibernate.connection.driver_class" value="org.hsqldb.jdbcDriver"/>
+            <property name="hibernate.connection.url" value="jdbc:hsqldb:mem:app-db"/>
+            <property name="hibernate.connection.username" value="sa"/>
+            <property name="hibernate.connection.password" value=""/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>-->
+
+            <property name="hibernate.archive.autodetection" value="class"/>
+            <property name="hibernate.connection.driver_class" value="org.mariadb.jdbc.Driver"/>
+            <property name="hibernate.connection.url" value="jdbc:mariadb://localhost:3306/monitoreoheladerasdds"/>
+            <property name="hibernate.connection.username" value="root"/>
+            <property name="hibernate.connection.password" value=""/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MariaDBDialect"/>
+
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="use_sql_comments" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+
+    </persistence-unit>
+
+</persistence>

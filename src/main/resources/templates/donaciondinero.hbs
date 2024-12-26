@@ -1,0 +1,123 @@
+{{#partial "contenido"}}
+    <div class="home container-fluid">
+        <div class="d-flex container-fluid flex-column flex-md-row justify-content-evenly p-0 m-0">
+            <div class="d-flex flex-column flex-sm-row justify-content-center w3-animate-left w3-animate-opacity non-square-distrib" style="animation-duration: 2s;">
+                <img class="img-torcida-dinero" src="/public/img/donacion-dinero-alarg.jpg" alt="donar dinero">
+            </div>
+
+        <div class="container-fluid flex-md-column flex-sm-row p-5 col-md-6 w3-animate-bottom w3-animate-opacity " style="animation-duration: 2s;">
+        <form action="/donacion/index/donaciondinero" method="POST">
+
+            <div class="borde-blanco">
+            <!-- monto -->
+            <div class="group-2">
+                <div class="group-wrapper">
+                    <div class="div-wrapper">
+                        <div class="group-3">
+                            <label for="monto" class="texto-label">Monto</label>
+                            <input type="text" id="monto" name="monto" class="label-formulario" placeholder="Ingrese Monto" required />
+                        </div>
+                    </div>
+                </div>
+
+            <!-- frecuencia -->
+            <div class="group-7">
+                <div class="group-8">
+                    <div class="div-wrapper">
+                        <div class="group-3">
+                            <label for="frecuencia" class="texto-label">Frecuencia</label>
+                            <select id="frecuencia" name="frecuencia" class="label-formulario option" required>
+                                <option value="" disabled selected>Seleccione una opción</option>
+                                <option value="semanal">Diaria</option>
+                                <option value="quincenal">Semanal</option>
+                                <option value="mensual">Mensual</option>
+                                <option value="anual">Anual</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- fecha inicio -->
+            <div class="group-wrapper">
+                <div class="div-wrapper">
+                    <div class="group-3">
+                        <label for="fecha-donacion" class="texto-label">Fecha Donacion Inicio</label>
+                        <input type="date" id="fecha-donacion" name="fecha-donacion" class="label-formulario" required />
+                    </div>
+                </div>
+            </div>
+
+            <!-- fecha fin -->
+            <div class="group-wrapper">
+                <div class="div-wrapper">
+                    <div class="group-3">
+                        <label for="fecha-donacion" class="texto-label">Fecha Donacion Fin</label>
+                        <input type="date" id="fecha-donacion" name="fecha-donacion" class="label-formulario" required />
+                    </div>
+                </div>
+            </div>
+
+        <h3 class="d-flex flex-row px-5 pt-5 pb-3 justify-content-center align-self-center informacion-tarjeta">Informacion de la tarjeta</h3>
+
+        <!-- nro tarjeta -->
+        <div class="group-4">
+            <div class="group-5">
+                <div class="group-6">
+                    <label for="nro-tarjeta" class="texto-label">Nro Tarjeta</label>
+                    <input type="text" id="nro-tarjeta" name="nro-tarjeta" class="label-formulario" placeholder="Ingrese Nro Tarjeta" required />
+                </div>
+            </div>
+        </div>
+
+        <!-- mes tarjeta -->
+        <div class="group-7">
+            <div class="group-8">
+                <div class="div-wrapper">
+                    <div class="group-3">
+                        <label for="mes" class="texto-label">Mes Tarjeta</label>
+                        <input type="text" id="mes" name="mes" class="label-formulario" placeholder="Ingrese mes de vencimiento de la tarjeta" required />
+                    </div>
+                </div>
+            </div>
+
+        <!-- anio tarjeta -->
+        <div class="group-7">
+            <div class="group-8">
+                <div class="div-wrapper">
+                    <div class="group-3">
+                        <label for="anio" class="texto-label">Año Tarjeta</label>
+                        <input type="text" id="anio" name="anio" class="label-formulario" placeholder="Ingrese año de vencimiento de la tarjeta" required />
+                    </div>
+                </div>
+            </div>
+
+            <!-- cvc -->
+            <div class="group-7">
+                <div class="group-8">
+                    <div class="div-wrapper">
+                        <div class="group-3">
+                            <label for="cvc" class="texto-label">CVC</label>
+                            <input type="text" id="cvc" name="cvc" class="label-formulario" placeholder="Ingrese CVC" required />
+                        </div>
+                    </div>
+                </div>
+
+
+        </div>
+        </div>
+        <!-- boton donar -->
+        <div class="frame">
+            <button class="donar-bt" type="submit" onclick="mostrarMensaje()">DONAR</button>
+            <span id="mensajeAgradecimiento" style="margin-left: 10px; color: #4CAF50;"></span>
+        </div>
+    </div>
+    </form>
+
+            </div>
+        </div>
+    </div>
+
+{{/partial}}
+
+{{> templates/layout}}

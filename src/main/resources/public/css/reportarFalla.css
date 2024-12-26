@@ -1,0 +1,244 @@
+/* General Container Styles */
+.container-report {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Title */
+.container-report .form_title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    flex-basis: 100%;
+    margin-bottom: 20px;
+}
+
+/* Form Layout */
+.container-report .form_content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.container-report .form_content .form_fields {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Labels */
+.container-report .form_label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Inputs */
+.container-report input[type="text"],
+.container-report input[type="email"],
+.container-report textarea,
+.container-report select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(255, 182, 193, 0.7); /* Pink background */
+    font-size: 14px;
+}
+
+.container-report textarea {
+    resize: none;
+    height: 100px;
+}
+
+/* Severity Section */
+.container-report .severity-options {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.container-report .severity-options label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.container-report .severity-options input[type="radio"] {
+    accent-color: #333;
+}
+
+.container-report .severity-options span {
+    font-size: 14px;
+    color: #000; /* Set text to black */
+}
+
+/* Image Section */
+
+.container-report .image_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 200px;
+}
+
+.container-report .image_section img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container-report .image_section button {
+    background-color: #FF9225;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.container-report .image_section button img {
+    width: 16px; /* Adjust icon size */
+    height: 16px; /* Adjust icon size */
+}
+
+.container-report .image_section button:hover {
+    background-color: #b86a22;
+}
+
+.container-report .upload_image_section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align left */
+    gap: 10px;
+    width: 100%; /* Ensure it spans full width */
+}
+
+.container-report .upload_image_section label {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Add space between label and file input */
+    font-size: 14px;
+    color: #333;
+    width: 100%; /* Match the width of the form */
+}
+
+.container-report .upload_image_section input[type="file"] {
+    flex-grow: 1; /* Make the file input span available space */
+    padding: 8px; /* Add padding for a consistent look */
+    border: 0 solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.7); /* Subtle white background */
+    max-width: 100%; /* Prevent overflow */
+}
+
+.container-report .upload_image_section img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container-report .upload_image_section button {
+    background-color: #FF9225;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.container-report .upload_image_section button img {
+    width: 16px; /* Adjust icon size */
+    height: 16px; /* Adjust icon size */
+}
+
+.container-report .upload_image_section button:hover {
+    background-color: #b86a22;
+}
+
+/* Submit Button */
+.container-report .submit_button {
+    background-color: #FF9225;
+    color: #FFFFFF;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    flex-basis: 100%;
+    text-align: center;
+}
+
+.container-report .submit_button:hover {
+    background-color: #b86a22;
+}
+
+/* Camera Icon and Photo Button Adjustments */
+.container-report .photo_buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container-report .photo_buttons button {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+    background-color: #FF9225;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.container-report .photo_buttons button:hover {
+    background-color: #b86a22;
+}
+
+/* Return Link */
+.container-report .return-link {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.container-report .form_select {
+    max-height: 200px; /* Adjust height as needed for your design */
+    overflow-y: auto;
+    display: block;
+}
+
+.container-report .image_section .uploaded-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    object-fit: cover;
+}

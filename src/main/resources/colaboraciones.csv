@@ -1,0 +1,11 @@
+TipoDoc;Documento;Nombre;Apellido;Mail;Fecha de Colaboración;Fecha de Nacimiento;Forma de colaboración;Cantidad
+DNI;41710110;Juan;Gómez;jgomez@test.com;01/01/2023;01/01/2000;DINERO;2
+LC;123456790;Lionel;Messi;lmessi@test.com;01/01/2023;01/01/2000;REDISTRIBUCION_VIANDAS;1
+DNI;41710191;Luis;Gómez;lgomez@test.com;01/01/2023;01/01/2000;DINERO;2
+LC;123456792;Marisa;Messi;mmessi@test.com;01/01/2023;01/01/2000;REDISTRIBUCION_VIANDAS;1
+DNI;41710193;Juana;Gómez;juanagomez@test.com;01/01/2023;01/01/2000;DINERO;2
+LC;123456794;Lionela;Messi;lamessi@test.com;01/01/2023;01/01/2000;REDISTRIBUCION_VIANDAS;1
+DNI;41710195;Jacinta;Gómez;jagomez@test.com;01/01/2023;01/01/2000;DINERO;2
+LC;123456796;Laura;Messias;lmessias@test.com;01/01/2023;01/01/2000;REDISTRIBUCION_VIANDAS;1
+DNI;41710197;Jaime;Gonzalez;jaime.gonzalez@test.com;01/01/2023;01/01/2000;DINERO;2
+LC;123456798;Esteban;Quito;e.quito@test.com;01/01/2023;01/01/2000;REDISTRIBUCION_VIANDAS;1

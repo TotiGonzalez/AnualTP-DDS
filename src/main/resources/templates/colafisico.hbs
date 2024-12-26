@@ -1,0 +1,45 @@
+{{#partial "contenido"}}
+    <div class="container-report">
+        <p class="form_title">Registrar colaborador físico</p>
+
+        <div class="form_content">
+            <!-- Nombre y Dirección -->
+            <div class="form_fields">
+                <div class="form_field">
+                    <label class="form_label">Nombre</label>
+                    <input type="text" name="nombre" placeholder="Value">
+                </div>
+                <div class="form_field">
+                    <label class="form_label">Dirección</label>
+                    <input type="text" name="direccion" placeholder="Value">
+                </div>
+            </div>
+
+            <!-- Apellido y Edad -->
+            <div class="form_fields">
+                <div class="form_field">
+                    <label class="form_label">Apellido</label>
+                    <input type="text" name="apellido" placeholder="Value">
+                </div>
+                <div class="form_field">
+                    <label class="form_label">Edad</label>
+                    <input type="text" name="edad" placeholder="Value">
+                </div>
+            </div>
+
+            <!-- Image and button section -->
+            <div class="image_section">
+                <img src="../public/img/imagen-camara.png" alt="Camera Icon" class="camera_icon">
+                <button type="button" class="photo_button">
+                    <img src="../public/img/camera.png" alt="Camera Icon"> Tomar foto
+                </button>
+                <button type="button" class="attach_button">
+                    <img src="../public/img/attach.png" alt="Attach Icon"> Adjuntar
+                </button>
+            </div>
+        </div>
+
+        <button type="submit" class="submit_button">Registrar</button>
+    </div>
+{{/partial}}
+{{> templates/layout}}
